@@ -20,8 +20,6 @@
 });
 
 myApp.controller("PageController", function ($scope, pageInfoService) {
-    $scope.message = "Hello from AngularJS";
-
     pageInfoService.getInfo(function (info) {
         $scope.title = info.title;
         $scope.url = info.url;

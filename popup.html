@@ -11,17 +11,17 @@
     </head>
     <body id="popup">
         <header>
-            <h1>AngularJS + Chrome Extension</h1>
+            <h1>Picture Parser Chrome Extension</h1>
         </header>
 
         <div ng-controller="PageController">
-            <div>{{message}}</div>
-            <h2>Page:</h2>
+            <h2>Page Information:</h2>
             <div>{{title}}</div>
             <div>{{url}}</div>
-            <h2>Has Links:</h2>
+            <h2>Has Images:</h2>
             <ul>
                 <li ng-repeat="pageInfo in pageInfos">
+                    <img class="image-preview" src="{{pageInfo.url}}" />
                     <div>{{pageInfo.url}}</div>
                 </li>                       
             </ul>
