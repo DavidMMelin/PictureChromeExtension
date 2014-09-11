@@ -2,20 +2,35 @@
 
 chrome.extension.onMessage.addListener(
 function (request, sender, sendResponse) {
+    var validUrls = ['org', 'com', 'net'];
+
     // debugger;
     if (request.action == 'PageInfo') {
+        var origin = window.location.origin;
         var pageInfos = [];
 
         $('img').each(function() {
             var pageInfo = {};
             
             var src = $(this).attr('src');
+            var alt = $(this).attr('alt');
 
-            if (src != null )//&& href.indexOf("http") == 0)
+            if (src != null)
             {
                 //only add urls that start with http
                 //check for min height and width
+                //check url for words like (avatar, icon, logo, small)
+                if (util.stringExists(validUrls, src)) {
+                    if (src.indexOf("http") != 0) {
+                        src = 'https:' + src;
+                    }
+                }
+
+                if (src.indexOf("http") != 0) {
+                    src = origin + src;
+                }
                 pageInfo.url = src;
+                alt ? pageInfo.alternate = alt : "Missing Description"
                 pageInfos.push(pageInfo);
             }
         });

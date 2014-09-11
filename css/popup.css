@@ -2,6 +2,14 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
 #popup {
   min-width: 500px;
   width: 500px;

@@ -13,7 +13,7 @@
 		"default_title": "AngularJSChromeEx"
 	},
 	"content_scripts": [{
-		"js": [ "js/lib/jquery-1.8.2.min.js", "js/app/content.js" ],
+		"js": [ "js/lib/jquery-1.8.2.min.js", "js/app/content.js", "js/app/util.js" ],
 		"matches": [ "*://*/*" ],
 		"run_at": "document_start"
 	}],
