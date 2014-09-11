@@ -6,7 +6,7 @@ util.stringExists = function (arr, str) {
 util.validSource = function (src) {
 	var valid = true;
 
-	var invalidKeywords = ['icon', 'avatar', 'logo', 'small', 'menu', 'theme', 'gstatic', 'marker'];
+	var invalidKeywords = ['icon', 'avatar', 'logo', 'small', 'menu', 'theme', 'gstatic', 'marker', 'header', 'banner', 'pixel', 'divider', 'button'];
 
 	if (!src) valid = false;
 	if (src.indexOf('gif') != -1) valid = false;

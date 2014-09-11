@@ -1,6 +1,4 @@
-﻿//alert('content script loaded');
-
-chrome.extension.onMessage.addListener(
+﻿chrome.extension.onMessage.addListener(
 function (request, sender, sendResponse) {
     var validUrls = ['org', 'com', 'net'];
 
@@ -45,3 +43,4 @@ function (request, sender, sendResponse) {
 // - use image exif geolocation coordinates?
 // - check current, parent, and child container for text. Run against dictionary of locations
 // API that guesses location based upon landmark
+// - got up parent divs while there is still only one image tag, look for key words such as 'title', 'dexcription'
