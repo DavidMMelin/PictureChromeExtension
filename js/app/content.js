@@ -6,7 +6,7 @@ function (request, sender, sendResponse) {
 
     // debugger;
     if (request.action == 'PageInfo') {
-        var origin = window.location.origin;
+        var origin = window.location.origin + '/';
         var pageInfos = [];
 
         $('img').each(function() {
@@ -16,10 +16,7 @@ function (request, sender, sendResponse) {
             var alt = $(this).attr('alt');
 
             if (util.validSource(src)) {
-
-                //only add urls that start with http
                 //check for min height and width
-                //check url for words like (avatar, icon, logo, small)
                 if (util.stringExists(validUrls, src)) {
                     if (src.indexOf("http") != 0) {
                         src = 'https:' + src;
@@ -30,7 +27,7 @@ function (request, sender, sendResponse) {
                     src = origin + src;
                 }
                 pageInfo.url = src;
-                alt ? pageInfo.alternate = alt : "Missing Description"
+                pageInfo.alternate = util.validAlternate(alt) ? alt : "No Location Found"
                 pageInfos.push(pageInfo);
             }
         });
@@ -46,3 +43,5 @@ function (request, sender, sendResponse) {
 // - Maybe find a way to search in the parent and child divs
 
 // - use image exif geolocation coordinates?
+// - check current, parent, and child container for text. Run against dictionary of locations
+// API that guesses location based upon landmark

@@ -16,10 +16,10 @@
 
         <div ng-controller="PageController">
             <h2>Page Information:</h2>
-            <div>{{title}}</div>
-            <div>{{url}}</div>
+            <div>Title: {{title}}</div>
+            <div>URL: {{url}}</div>
             <h2>Has Images:</h2>
-            <ul>
+            <ul class="list">
                 <li ng-repeat="pageInfo in pageInfos">
                     <img class="image-preview" src="{{pageInfo.url}}" />
                     <div>{{pageInfo.url}}</div>

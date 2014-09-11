@@ -1,8 +1,12 @@
 body {
   font-family: Helvetica, sans-serif;
+  background-color: rgb(137, 213, 216);
+  color: rgba(0, 0, 0, 0.67);
+  font-size: 13px;
 }
 
-ul {
+.list {
+  font-size: 14px;
   list-style: none;
 }
 
@@ -11,10 +15,10 @@ li {
 }
 
 #popup {
-  min-width: 500px;
-  width: 500px;
+  min-width: 600px;
+  width: 600px;
   min-height: 10px;
-  height: 300px;
+  height: 400px;
   margin: 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
