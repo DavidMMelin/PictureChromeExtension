@@ -15,8 +15,8 @@ function (request, sender, sendResponse) {
             var src = $(this).attr('src');
             var alt = $(this).attr('alt');
 
-            if (src != null)
-            {
+            if (util.validSource(src)) {
+
                 //only add urls that start with http
                 //check for min height and width
                 //check url for words like (avatar, icon, logo, small)
