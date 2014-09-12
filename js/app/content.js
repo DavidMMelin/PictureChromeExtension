@@ -13,7 +13,6 @@ function (request, sender, sendResponse) {
             var alt = $(this).attr('alt');
 
             if (util.validSource(src)) {
-                //check for min height and width
                 if (util.stringExists(validUrls, src)) {
                     if (src.indexOf("http") != 0) {
                         src = 'https:' + src;

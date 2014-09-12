@@ -4,8 +4,7 @@
 
         chrome.tabs.query({'active': true},
         function (tabs) {
-            if (tabs.length > 0)
-            {
+            if (tabs.length > 0) {
                 model.title = tabs[0].title;
                 model.url = tabs[0].url;
 
@@ -14,7 +13,6 @@
                     callback(model);
                 });
             }
-
         });
     };
 });
