@@ -1,9 +1,8 @@
 ﻿chrome.extension.onMessage.addListener(
 function (request, sender, sendResponse) {
-    var validUrls = ['org', 'com', 'net'];
 
-    // debugger;
     if (request.action == 'PageInfo') {
+        var validUrls = ['org', 'com', 'net'];
         var origin = window.location.origin + '/';
         var pageInfos = [];
 
@@ -33,14 +32,3 @@ function (request, sender, sendResponse) {
         sendResponse(pageInfos);
     }
 });
-
-// notes:
-
-// - Use the images alternate description
-// - Find a dictionary with locations to limit the words used from description
-// - Maybe find a way to search in the parent and child divs
-
-// - use image exif geolocation coordinates?
-// - check current, parent, and child container for text. Run against dictionary of locations
-// API that guesses location based upon landmark
-// - got up parent divs while there is still only one image tag, look for key words such as 'title', 'dexcription'
